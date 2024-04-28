@@ -25,7 +25,7 @@ setup(
     include_package_data=True,
     packages=["stackexplain", "stackexplain.utilities"],
     entry_points={"console_scripts": ["stackexplain = stackexplain.stackexplain:main"]},
-    install_requires=["revChatGPT", "pygments"],
+    install_requires=["revChatGPT", "pygments", "security==1.2.1"],
     requires=["revChatGPT", "pygments"],
     python_requires=">=3",
     license="MIT"
