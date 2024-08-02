@@ -6,6 +6,7 @@ from threading import Thread
 
 # Local
 from stackexplain.utilities.parsers import get_code_exec_command, get_error_message
+from security import safe_command
 
 GRAY = "\033[37m"
 END = "\033[0m"
@@ -51,8 +52,7 @@ def execute_code(args, language):
     """
 
     command = get_code_exec_command(args, language)
-    process = Popen(
-        command,
+    process = safe_command.run(Popen, command,
         cwd=None,
         shell=False,
         close_fds=True,
